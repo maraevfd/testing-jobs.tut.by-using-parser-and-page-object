@@ -1,3 +1,3 @@
 # The second task AQAlab
 
-This is a repository for storing the secon practical task Python AQA Lab.
+This is a repository for storing the second practical task Python AQA Lab.
