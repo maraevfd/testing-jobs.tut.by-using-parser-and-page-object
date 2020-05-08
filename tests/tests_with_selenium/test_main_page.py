@@ -23,9 +23,11 @@ def test_search_by_correct_word(main_page, search_word):
 
 def test_go_to_login_page(main_page):
     main_page.open()
-    main_page.go_to_login_page()
+    login_page = main_page.go_to_login_page()
+    login_page.check_current_url('https://jobs.tut.by/account/login?backurl=%2F')
 
 
 def test_go_to_advanced_search(main_page):
     main_page.open()
-    main_page.create_advanced_search()
+    main_page.go_to_advanced_search()
+    main_page.check_current_url('https://jobs.tut.by/search/vacancy/advanced')

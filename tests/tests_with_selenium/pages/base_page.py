@@ -20,3 +20,7 @@ class BasePage:
         return WebDriverWait(self.browser, time). \
             until(ec.presence_of_all_elements_located(locator),
                   message=f"Can't find elements by locator {locator}")
+
+    def check_current_url(self, url):
+        current_url = self.browser.current_url
+        assert current_url == url

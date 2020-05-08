@@ -28,7 +28,9 @@ class MainPage(BasePage):
         login_button.click()
         return LoginPage(browser=self.browser, url=self.browser.current_url)
 
-    def create_advanced_search(self):
+    def go_to_advanced_search(self):
         advanced_search_button = self.find_element(
             MainPageLocators.LOCATOR_ADVANCED_SEARCH_BUTTON)
         advanced_search_button.click()
+
+
