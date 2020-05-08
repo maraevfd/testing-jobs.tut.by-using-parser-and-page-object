@@ -13,7 +13,7 @@ def main_page():
     browser.quit()
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="function")
 def login_page():
     browser = webdriver.Chrome()
     link = 'https://jobs.tut.by/account/login?backurl=%2F'
