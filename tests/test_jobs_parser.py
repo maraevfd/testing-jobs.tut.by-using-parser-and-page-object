@@ -1,11 +1,11 @@
-import JobsParser
+import jobs_parser
 import requests
 import pytest
 
 
 @pytest.fixture(scope='function')
 def vacancy_parser():
-    vacancy_parser = JobsParser.VacancyParser('python')
+    vacancy_parser = jobs_parser.VacancyParser('python')
     yield vacancy_parser
     del vacancy_parser
 
@@ -13,7 +13,7 @@ def vacancy_parser():
 class TestVacancyParser:
 
     def test_connection_to_the_site(self):
-        response = requests.get(JobsParser.URL, headers=JobsParser.HEADERS)
+        response = requests.get(jobs_parser.URL, headers=jobs_parser.HEADERS)
         assert response.status_code == 200
 
     def test_change_keyword_to_search(self, vacancy_parser):
@@ -34,7 +34,7 @@ class TestVacancyParser:
         vacancy_parser.set_search_word('python')
         vacancy_parser.parse_vacancies()
         for link in vacancy_parser.links:
-            response = requests.get(link, headers=JobsParser.HEADERS)
+            response = requests.get(link, headers=jobs_parser.HEADERS)
             assert response.status_code == 200
 
 

@@ -1,15 +1,15 @@
-import JobsParser
+import jobs_parser
 import pytest
 
 
 @pytest.fixture(scope="function")
 def keyword_counter():
-    vacancy_parser = JobsParser.VacancyParser('python')
+    vacancy_parser = jobs_parser.VacancyParser('python')
     vacancy_parser.parse_vacancies()
-    keyword_counter = JobsParser.KeywordCounter(vacancy_parser,
-                                                'python',
-                                                'flask',
-                                                'linux')
+    keyword_counter = jobs_parser.KeywordCounter(vacancy_parser,
+                                                 'python',
+                                                 'flask',
+                                                 'linux')
     yield keyword_counter
     del keyword_counter
     del vacancy_parser
