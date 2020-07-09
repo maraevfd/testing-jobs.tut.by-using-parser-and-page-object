@@ -1,6 +1,10 @@
-# The second task AQAlab
-
-This is a repository for storing the second practical task Python AQA Lab.
+The procedure for working with the jobs_parser:
+1. Create an instance of the VacancyParser class and pass it the keyword to search for vacancies (python).
+2. Parse vacancies using the parse_vacancies method.
+3. Create an instance of the KeywordCounter class and pass it the instance of the VacancyParser class
+and the keywords for counting (vacancy_parser_object, python, flask, linux).
+4. Use count_words method to count keywords. The result is stored in the dictionary with keyword as a keys
+and amount of keyword as a values.
 
 The  directory 'tests' contains tests for the first task JobParser and the directory 'tests with selenium'.
 
